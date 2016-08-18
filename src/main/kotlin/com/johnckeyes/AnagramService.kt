@@ -14,4 +14,3 @@ open class AnagramService {
         return charArray.joinToString()
     }
 }
-t
