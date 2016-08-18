@@ -7,10 +7,11 @@ open class AnagramService {
 
     open fun wordsAreAnagrams(words: List<String>) =
             words.map { keyFor(it) }.distinct().size == 1
-}
 
-fun keyFor(word: String): String {
-    val charArray = word.toLowerCase().toCharArray()
-    charArray.sort()
-    return charArray.joinToString()
+    private fun keyFor(word: String): String {
+        val charArray = word.toLowerCase().toCharArray()
+        charArray.sort()
+        return charArray.joinToString()
+    }
 }
+t
