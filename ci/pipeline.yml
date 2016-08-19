@@ -1,0 +1,15 @@
+resources:
+  - name: source-code
+    type: git
+    source:
+      uri: https://github.com/cah-johnkeyes/concourse-demo-app.git
+      branch: master
+
+jobs:
+  - name: unit-test
+    plan:
+      - get: source-code
+        trigger: true
+      - task: run-tests
+        priviledged: true
+        file: source-code/ci/tasks/unit-test.yml
