@@ -20,7 +20,7 @@ apply plugin: 'maven-publish'
 group='com.cardinalhealth'
 jar {
 	baseName = 'anagramalyzer'
-	version = "1.0.${new Date().time}-SNAPSHOT"
+	version = "1.0.${new Date().time}"
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
