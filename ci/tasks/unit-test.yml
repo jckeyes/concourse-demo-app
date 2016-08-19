@@ -13,3 +13,6 @@ inputs:
 run:
     path: "app/gradlew"
     args: ["--build-file", "app/build.gradle", "test"]
+
+params:
+    TERM: -dumb
