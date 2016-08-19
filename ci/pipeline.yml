@@ -4,6 +4,11 @@ resources:
     source:
       uri: https://github.com/cah-johnkeyes/concourse-demo-app.git
       branch: master
+  - name: deploy-config
+    type: git
+    source:
+      uri: https://github.com/cah-johnkeyes/concourse-demo-app-deploy.git
+      branch: master
 
 jobs:
   - name: unit-test
@@ -21,3 +26,11 @@ jobs:
       - task: publish
         priviledged: true
         file: source-code/ci/tasks/assemble-publish.yml
+  - name: deploy
+    plan:
+      - get: source-code
+      - get: deploy-config
+        trigger: true
+      - task: deploy-app
+        priviledged: true
+        file: source-code/ci/tasks/deploy.yml
