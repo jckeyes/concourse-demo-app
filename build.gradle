@@ -38,6 +38,12 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+ext {
+	repoUser = System.env.REPO_USERNAME ?: "local"
+	repoPassword = System.env.REPO_PASSWORD ?: "local"
+	coporateRepoUrl = System.env.REPO_URL ?: "local"
+}
+
 publishing {
 	publications {
 		maven(MavenPublication) {
