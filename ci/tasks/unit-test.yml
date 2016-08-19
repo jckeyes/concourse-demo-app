@@ -16,3 +16,4 @@ run:
 
 params:
     TERM: -dumb
+    GRADLE_OPTS: -Dorg.gradle.native=false
