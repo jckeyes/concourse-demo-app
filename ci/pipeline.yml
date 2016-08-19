@@ -16,7 +16,7 @@ jobs:
   - name: publish
     plan:
       - get: source-code
-        success: [unit-test]
+        passed: [unit-test]
       - task: publish
         priviledged: true
         file: source-code/ci/tasks/assemble-publish.yml
