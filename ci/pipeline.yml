@@ -17,6 +17,7 @@ jobs:
     plan:
       - get: source-code
         passed: [unit-test]
+        trigger: true
       - task: publish
         priviledged: true
         file: source-code/ci/tasks/assemble-publish.yml
