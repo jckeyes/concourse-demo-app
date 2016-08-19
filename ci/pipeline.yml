@@ -13,3 +13,10 @@ jobs:
       - task: run-tests
         priviledged: true
         file: source-code/ci/tasks/unit-test.yml
+  - name: publish
+    plan:
+      - get: source-code
+        success: [unit-test]
+      - task: publish
+        priviledged: true
+        file: source-code/ci/tasks/assemble-publish.yml
