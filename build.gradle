@@ -39,9 +39,9 @@ dependencies {
 }
 
 ext {
-	repoUser = System.env.REPO_USERNAME ?: "local"
+	repoUsername = System.env.REPO_USERNAME ?: "local"
 	repoPassword = System.env.REPO_PASSWORD ?: "local"
-	coporateRepoUrl = System.env.REPO_URL ?: "local"
+	repoUrl = System.env.REPO_URL ?: "local"
 }
 
 publishing {
