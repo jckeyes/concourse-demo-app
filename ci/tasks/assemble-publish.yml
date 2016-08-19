@@ -7,12 +7,13 @@ image_resource:
         tag: latest
 
 inputs:
+  - name: pipeline
   - name: source-code
     path: app
 
 run:
     path: "app/gradlew"
-    args: ["--build-file", "app/build.gradle", "assemble"]
+    args: ["--build-file", "app/build.gradle", "assemble", "publish", "-PrepoUrl=$REPO_URL", "-PrepoUsername=$REPO_USERNAME", "-PrepoPassword=$REPO_PASSWORD"]
 
 params:
     TERM: -dumb

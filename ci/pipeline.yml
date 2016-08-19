@@ -26,6 +26,10 @@ jobs:
       - task: publish
         priviledged: true
         file: source-code/ci/tasks/assemble-publish.yml
+        params:
+          repo_url: {{REPO_URL}}
+          repo_username: {{REPO_USERNAME}}
+          repo_password: {{REPO_PASSWORD}}
   - name: deploy
     plan:
       - get: source-code
