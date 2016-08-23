@@ -49,7 +49,6 @@ publishing {
 		maven(MavenPublication) {
 			groupId 'com.cardinalhealth'
 			artifactId jar.baseName
-			version jar.version
 		}
 	}
 	repositories {
