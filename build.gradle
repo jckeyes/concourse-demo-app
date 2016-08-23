@@ -29,7 +29,6 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-devtools')
@@ -61,4 +60,10 @@ publishing {
 			url "${repoUrl}"
 		}
 	}
+}
+
+task writeVersionFile {
+	def file = new File("${buildDir}/VERSION")
+	file << jar.version
+
 }
