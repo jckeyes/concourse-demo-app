@@ -48,6 +48,7 @@ publishing {
 		maven(MavenPublication) {
 			groupId 'com.cardinalhealth'
 			artifactId jar.baseName
+			version jar.version
 		}
 	}
 	repositories {
@@ -65,5 +66,4 @@ publishing {
 task('writeVersionFile') << {
 	def file = new File("${buildDir}/VERSION")
 	file << jar.version
-
 }
