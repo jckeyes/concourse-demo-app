@@ -62,7 +62,7 @@ publishing {
 	}
 }
 
-task writeVersionFile {
+task('writeVersionFile') << {
 	def file = new File("${buildDir}/VERSION")
 	file << jar.version
 
